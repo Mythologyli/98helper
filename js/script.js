@@ -46,7 +46,7 @@ $(function() {
         $stop.fadeIn();
         
         stepTimeout = setTimeout(function() {
-            $tips.html('1、找到输入框并选中');
+            $tips.html('1、找到 cc98 搜索框并选中');
             
             $arrow.removeClass('active').show().animate({
                 left: $kw.offset().left + 20 + 'px',
@@ -63,7 +63,7 @@ $(function() {
                         $kw.val(query.substr(0, i));
                         if (++i > query.length) {
                             clearInterval(typeInterval);
-                            $tips.html('3、点击下“百度一下”按钮');
+                            $tips.html('3、点击下“搜索”按钮');
                             
                             $arrow.removeClass('active').fadeIn().animate({
                                 left: $searchSubmit.offset().left + $searchSubmit.width()  / 2 + 'px',
@@ -73,7 +73,7 @@ $(function() {
                                 $arrow.addClass('active');
                                 
                                 stepTimeout = setTimeout(function () {
-                                    window.location = 'https://www.baidu.com/s?ie=utf-8&wd=' + encodeURIComponent(query);
+                                    window.location = 'https://www.cc98.org/search?boardId=0&keyword=' + encodeURIComponent(query);
                                 }, 1000);
                             });
                         }
@@ -91,7 +91,7 @@ $(function() {
         $arrow.stop().hide();
         $kw.val(query);
         query = false;
-        $tips.html('输入一个问题，然后点击百度一下');
+        $tips.html('输入一个问题，然后点击98一下');
     });
     
     /* 提交 */
@@ -103,7 +103,7 @@ $(function() {
             $tips.html('<span style="color: red">搜了个寂寞？</span>');
             $kw.val('');
         } else {
-            $tips.html('↓↓↓ 复制下面的链接，教伸手党使用百度');
+            $tips.html('↓↓↓ 复制下面的链接，教伸手党使用98搜索');
             $('#output').fadeIn();
             $urlOutput.val(window.location.origin + window.location.pathname + '?q=' + Base64.encode(question)).focus().select();
         }
